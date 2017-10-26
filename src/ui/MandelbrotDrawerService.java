@@ -70,8 +70,8 @@ public class MandelbrotDrawerService extends Service<Color[]> {
 	
 		double r;
 		double c;
-		r = (double)x * (maxX - minX) / (double)length + minX;
-		c = maxY - (double)y * (maxY - minY) / (double)length;
+		r = x * (maxX - minX) / length + minX;
+		c = maxY - y * (maxY - minY) / length;
 		Complex n = new Complex(r, c);
 		Complex result = new Complex(r, c);
 		int iteration = 0;
@@ -87,8 +87,8 @@ public class MandelbrotDrawerService extends Service<Color[]> {
 
 	public void drag(int deltaX, int deltaY) {
 		System.out.println(deltaX + ", " + deltaY);
-		double deltaR = -1 * deltaX * (maxX - minX) / (double) length;
-		double deltaC = deltaY * (maxY - minY) / (double) length;
+		double deltaR = -1 * deltaX * (maxX - minX) / length;
+		double deltaC = deltaY * (maxY - minY) / length;
 		minX += deltaR;
 		minY += deltaC;
 		maxX += deltaR;

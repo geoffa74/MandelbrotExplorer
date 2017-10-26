@@ -1,19 +1,12 @@
 package ui;
 
 import javafx.application.Application;
-import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.image.PixelWriter;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 //Force 2^n x 2^n display
@@ -27,6 +20,7 @@ public class MandelbrotGUI extends Application {
 	double previousY;
 	double deltaZoom = 0.5;
 	
+	@Override
 	public void start(Stage primaryStage) throws Exception {
         BorderPane pane = new BorderPane();
         Canvas canvas = new Canvas(600, 600);
@@ -75,7 +69,7 @@ public class MandelbrotGUI extends Application {
         });
         primaryStage.setScene(scene);
         primaryStage.show();
-        drawer.draw(512,1000);
+        drawer.draw(512,255);
         
     }
 	
